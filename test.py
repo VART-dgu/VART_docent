@@ -46,7 +46,7 @@ if __name__ == "__main__":
     image_list = ["image1.jpg", "image2.jpg"]
     build_vector_db_from_images(image_list)
     qa = build_rag_qa_system()
-    query = "what is different between cat and dog?. 한국어로 대답해줘."
+    query = "고양이와 개의 차이점에 대해 설명해줘. 반드시 한국어로 대답하고, 영어나 다른 언어와 문자를 사용하지 마."
     result = qa.invoke(query)
     print("Answer:", result["result"])
     print("Source:", [doc.metadata["source"] for doc in result["source_documents"]])

@@ -19,6 +19,7 @@ def describe_images(artworks, museum_id):
     documents = []
     for art in artworks:
         image_path = art["image_url"]
+        artwork_id = art.get("artwork_id")
         title = art.get("title", "")
         original_description = art.get("description", "")
         author_id = art.get("author_id")
@@ -30,6 +31,7 @@ def describe_images(artworks, museum_id):
             page_content=full_content,
             metadata={
                 "source": image_path,
+                "artwork_id": artwork_id,
                 "author_id": author_id,
                 "author_name": author_name,
                 "museum_id": museum_id

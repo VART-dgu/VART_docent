@@ -1,4 +1,9 @@
 **/*.pyc
 **/*.jpg
 **/*.png
+mmrag_faiss/*.faiss
+mmrag_faiss/*.pkl
+mmrag_faiss/**/*
+mmrag_faiss/*
 
+**/*.txt

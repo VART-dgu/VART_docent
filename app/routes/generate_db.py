@@ -11,9 +11,9 @@ def generate_db():
     author_description = data.get("author_description")
     museum_id = data.get("museum_id")
     artworks = data.get("artworks", [])
-
+    ollama_urls = ["http://ollama-1:11434", "http://ollama-2:11434", "http://ollama-3:11434"]
     # Pass full artworks list to include title, description, and image
 
-    documents = describe_images(artworks, museum_id)
-    save_to_faiss(documents)
+    documents = describe_images(artworks, museum_id, ollama_url=ollama_urls[0])
+    save_to_faiss(documents, ollama_url=ollama_urls[0])
     return jsonify({"status": "success", "count": len(documents)})
